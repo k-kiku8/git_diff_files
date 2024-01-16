@@ -1,0 +1,6 @@
+.idea
+.vscode
+/dist/*
+!/dist/setting_sample.ini
+/build/
+dist/setting.ini
