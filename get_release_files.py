@@ -105,6 +105,8 @@ def main():
         # 一度実行済みだったら実行前に一旦フォルダごと削除
         if Path(output_directory).exists():
             shutil.rmtree(output_directory)
+        # 出力先ディレクトリを作成。
+        os.makedirs(output_directory, exist_ok=True)
 
         # ファイルコピーの実施
         copy_files(diff_result_array, project_path, output_directory)
@@ -139,7 +141,7 @@ def get_from_commit_revision_num():
 
 def export_txt_file(directory_name, file_name, diff_results):
     try:
-        path = directory_name + file_name
+        path = Path(directory_name,file_name)
         if Path(path).is_file():
             os.remove(path)
         with open(path, 'x', encoding='UTF-8') as f:
@@ -157,7 +159,6 @@ def export_txt_file(directory_name, file_name, diff_results):
 # exceptionの表示
 def print_exception(exception):
     print(Fore.RED)
-    print("エラーが発生しました。\n")
     print(exception)
     print(Fore.RESET)
 
