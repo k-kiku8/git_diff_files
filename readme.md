@@ -7,14 +7,14 @@ https://www.anaconda.com/download
 インストール先をメモしておくと良い。（デフォルトはC:\Users\○○\AppData\Local\anaconda3\）
 ○○はインストール先ユーザ名が入る。
 2. windowsメニューからAnaconda promptを起動。
-3. プロジェクトフォルダに移動 
-4. 仮想環境に入る
-    ```shell
-    conda activate python-exe
-    ```
-5. 環境作成
+3. プロジェクトフォルダに移動
+4. 環境作成
     ```shell
    conda env create -n [環境名] -f env.yml
+    ```
+5. 仮想環境に入る
+    ```shell
+    conda activate [環境名]
     ```
 6. setting.iniの設定  
 setting_sample.iniをコピーしてsetting.iniを作成。
